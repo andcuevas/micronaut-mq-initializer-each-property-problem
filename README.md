@@ -1,1 +1,1 @@
-This is a micronaut project example to reproduce a problem with ChannelInitializer and the use of @EachProperty.
+ Example project of Micronaut RabbitMQ to reproduce a problem with the use of @EachProperty.
