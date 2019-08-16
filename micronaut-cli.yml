@@ -1,0 +1,5 @@
+profile: grpc
+defaultPackage: pd.mq.tours
+---
+testFramework: junit
+sourceLanguage: java

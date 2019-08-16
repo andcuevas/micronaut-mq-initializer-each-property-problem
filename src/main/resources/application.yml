@@ -1,0 +1,35 @@
+---
+micronaut:
+  application:
+    name: example
+rabbitmq:
+  uri: amqp://dev:5672
+---
+my-configuration:
+  mq:
+    one:
+      ttl: "11s"
+      exchange: one
+      queues:
+        list:
+          - ${my-configuration.mq.one.queues.queue-a}
+          - ${my-configuration.mq.one.queues.queue-b}
+          - ${my-configuration.mq.one.queues.queue-c}
+          - ${my-configuration.mq.one.queues.queue-d}
+        queue-a: my-configuration.mq.one.get.queue-a
+        queue-b: my-configuration.mq.one.get.queue-b
+        queue-c: my-configuration.mq.one.get.queue-c
+        queue-d: my-configuration.mq.one.get.queue-d
+    two:
+      ttl: "11s"
+      exchange: two
+      queues:
+        list:
+          - ${my-configuration.mq.two.queues.queue-a}
+          - ${my-configuration.mq.two.queues.queue-b}
+          - ${my-configuration.mq.two.queues.queue-c}
+          - ${my-configuration.mq.two.queues.queue-d}
+        queue-a: my-configuration.mq.two.get.queue-a
+        queue-b: my-configuration.mq.two.get.queue-b
+        queue-c: my-configuration.mq.two.get.queue-c
+        queue-d: my-configuration.mq.two.get.queue-d
