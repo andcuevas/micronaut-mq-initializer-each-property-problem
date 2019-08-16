@@ -23,10 +23,6 @@ public class MqChannelInitializer extends ChannelInitializer {
 
         for(String queue: mqChannelConfiguration.getQueues().getList()) {
 
-            if (log.isDebugEnabled()) {
-                log.debug("Configurando cola mq: {}", queue);
-            }
-
             channel.queueDeclare(queue, true, false, false, null);
             channel.queueBind(queue, mqChannelConfiguration.getExchange(), queue);
 
